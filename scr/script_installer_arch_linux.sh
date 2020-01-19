@@ -92,5 +92,5 @@ genfstab -U /mnt >> /mnt/etc/fstab
 
 #copiando o segundo script de instalacao para o novo sistema
 cp ./script2_installer_arch_linux.sh /mnt
-arch-root /mnt
+arch-chroot /mnt
 
