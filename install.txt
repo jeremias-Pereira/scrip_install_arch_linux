@@ -1,0 +1,37 @@
+#	
+#	Guia de instalacao utilizando os scripts
+#
+#
+#
+#
+#
+#
+#salve os scripts em um pendrive
+#depois de rodar a iso do Arch
+#indentifique o pendrive se vc que contem os scripts
+fidsk -l
+
+#mounte o pendrive no /root
+mount /dev/"seu dispositivo" /root
+
+#Entre no diretorio /root
+cd /root
+
+#execute o script_intaller_arch_linux.sh
+./intaller_arch_linux.h
+#siga os passos 
+
+#ao terminar a execucao do script voce ja estara dentro do sistema 
+
+#execute o segundo script
+./script2_installer_arch_linux.sh
+
+#siga os pasos
+#sai do sistema
+exit
+#reinicie a maquina e remova o disco de instalacao do Arch
+#entre como root e a senha que voce criou no processo de instalacao e pronto
+
+#################################################################################
+
+#OBS: esse procedimento ira instalar o sistema somente em modo texto por enquanto!!!!
