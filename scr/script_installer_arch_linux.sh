@@ -91,6 +91,6 @@ pacstrap /mnt base linux linux-firmware
 genfstab -U /mnt >> /mnt/etc/fstab
 
 #copiando o segundo script de instalacao para o novo sistema
-cp ./scrip_install2.sh /mnt
+cp ./script2_installer_arch_linux.sh /mnt
 arch-root /mnt
 
