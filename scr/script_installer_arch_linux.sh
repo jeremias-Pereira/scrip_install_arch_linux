@@ -67,11 +67,14 @@ fi
 
 if [ -z "$PART_RAIZ" ]
 	then
-		fdisk -l |grep "${DISK}[2-9]"|sort|cut -c1-10,40-48
+		fdisk -l |grep "^${DISK}[^$PART_BOOT]"|sort|cut -c1-10,40-48
 		echo -e "\033[32;m Qual particao sera a RAIZ(/)\033[m"
 		read PART_RAIZ
+		clear
+
+		fdisk -l |grep "^${DISK}[^$PART_RAIZ,$PART_BOOT]"|sort|cut -c1-10,40-48
 		echo -e "\033[32;m Qual sera aparticao Home (/home)\033[m"
-		fdisk -l |grep "${DISK}[2-9]"|sort|cut -c1-10,40-48
+		#fdisk -l |grep "${DISK}[^$PART_RAIZ,$PART_BOOT,D]"|sort|cut -c1-10,40-48
 		read PART_HOME
 		clear
 		
