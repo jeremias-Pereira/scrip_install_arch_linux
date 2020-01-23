@@ -74,7 +74,6 @@ if [ -z "$PART_RAIZ" ]
 
 		fdisk -l |grep "^${DISK}[^$PART_RAIZ,$PART_BOOT]"|sort|cut -c1-10,40-48
 		echo -e "\033[32;m Qual sera aparticao Home (/home)\033[m"
-		#fdisk -l |grep "${DISK}[^$PART_RAIZ,$PART_BOOT,D]"|sort|cut -c1-10,40-48
 		read PART_HOME
 		clear
 		
