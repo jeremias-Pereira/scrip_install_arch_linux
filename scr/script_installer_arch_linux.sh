@@ -37,8 +37,15 @@ PART_BOOT="${DISK}1"
 TEST=`fdisk -l |grep "$DISK"`
 if [  -n "$TEST" ]
 	then
+		clear
+		echo -e "\033[33;1m Obs: atribua a flag \033[31;1m Bootable \033[33;1m A primeira particao do disco ao entrar no particionador\033[m"
+		sleep 5
+
 		cfdisk "$DISK"
-		
+		clear
+
+		PART_BOOT="${DISK}1"
+
 		#atribui a variavel a quandidade de particoes criadas no disco selecionado
 		COUNT_PARTITION=$(fdisk -l |egrep "^${DISK}[1-9]"|wc -l)
 		clear
@@ -61,7 +68,7 @@ if [  -n "$TEST" ]
 			mkfs.ext4 "$PART_RAIZ"
 		fi
 else
-	echo -e"\033[31;1m Disco Nao encontrado\033[m"
+	echo -e "\033[31;1m Disco Nao encontrado\033[m"
 	exit 0
 fi
 
