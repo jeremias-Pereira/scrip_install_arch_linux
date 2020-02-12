@@ -118,7 +118,6 @@ if [ -n "${PART_ROOT}" ]
 then
 	mkdir -p /mnt/root
 	mount "${PART_ROOT}" /mnt/root
-	echo "HELLO WORD"
 fi
 if [ -n "${PART_USR}" ]
 then
@@ -141,17 +140,9 @@ then
 	mount "${PART_TMP}" /mnt/tmp
 fi
 
-<<<<<<< HEAD
 pacstrap /mnt base linux linux-firmware
 #gerando o arquivo fstab
 genfstab -U /mnt >> /mnt/etc/fstab 
-=======
-pacstrap /mnt base linux linux-firmware >>pactraptmp 
-#dialog --tailbox pactraptmp 0 0
-#gerando o arquivo fstab
-genfstab -U /mnt >> /mnt/etc/fstab 
-
->>>>>>> master
 #copiando o segundo script de instalacao para o novo sistema
 cp ./script2_installer_arch_linux.sh /mnt
 arch-chroot /mnt
