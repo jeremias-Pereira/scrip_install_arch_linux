@@ -141,9 +141,17 @@ then
 	mount "${PART_TMP}" /mnt/tmp
 fi
 
+<<<<<<< HEAD
 pacstrap /mnt base linux linux-firmware
 #gerando o arquivo fstab
 genfstab -U /mnt >> /mnt/etc/fstab 
+=======
+pacstrap /mnt base linux linux-firmware >>pactraptmp 
+#dialog --tailbox pactraptmp 0 0
+#gerando o arquivo fstab
+genfstab -U /mnt >> /mnt/etc/fstab 
+
+>>>>>>> master
 #copiando o segundo script de instalacao para o novo sistema
 cp ./script2_installer_arch_linux.sh /mnt
 arch-chroot /mnt
