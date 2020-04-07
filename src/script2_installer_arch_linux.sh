@@ -9,7 +9,7 @@
 #       Licensa: MIT                                                            
 #
 #
-# Este segundo script set as configuracoes de localizacao configuracoes basicas da rede  hostname instalacao do bootloader 
+# Este segundo script seta as configuracoes de localizacao configuracoes basicas da rede  hostname instalacao do bootloader 
 #
 #
 #############################################################################################################################################################
@@ -73,5 +73,7 @@ fi
 #gera o arquivo de configuracao do grub
 grub-mkconfig -o /boot/grub/grub.cfg
 systemctl enable NetworkManager
+
+
 
 
